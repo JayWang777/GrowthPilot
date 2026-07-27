@@ -146,14 +146,7 @@ LLM_MODEL=deepseek-v4-flash
 # LLM_MODEL=gpt-4o-mini
 ```
 
----
 
-## 面试亮点
-
-1. **Prompt Engineering**：角色锚定 + 结构化输出 + RAG注入，Prompt 质量决定结果
-2. **RAG + LLM + 业务**：知识库增强生成，符合行业趋势
-3. **业务理解**：从商品定位到运营策略，覆盖完整运营链条
-4. **工程规范**：Pydantic 校验、异步 API、Pydantic Settings、代码格式化
 
 ---
 
