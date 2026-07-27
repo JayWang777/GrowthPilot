@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 商品增长运营助手</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ==================== 顶栏 ==================== -->
+<header class="topbar">
+    <div class="topbar-inner">
+        <span class="topbar-logo">✦ AI 商品增长运营助手</span>
+        <span class="topbar-tagline">帮助商家快速完成商品定位、营销内容生成和运营策略制定</span>
+        <button class="btn-upload" id="uploadBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            上传商品资料
+        </button>
+    </div>
+</header>
+
+<!-- ==================== 双栏布局 ==================== -->
+<div class="layout">
+
+    <!-- ====== 左侧栏 ====== -->
+    <aside class="sidebar">
+        <div class="sidebar-card">
+            <h2 class="sidebar-title">AI 运营工作流</h2>
+
+            <div class="flow-steps">
+                <div class="flow-step-item" data-step="1">
+                    <div class="flow-step-body">
+                        <span class="flow-step-num">①</span>
+                        <span class="flow-step-name">商品洞察</span>
+                    </div>
+                    <p class="flow-step-desc">发现目标用户和消费场景</p>
+                </div>
+
+                <div class="flow-step-item" data-step="2">
+                    <div class="flow-step-body">
+                        <span class="flow-step-num">②</span>
+                        <span class="flow-step-name">卖点提炼</span>
+                    </div>
+                    <p class="flow-step-desc">提取商品核心价值</p>
+                </div>
+
+                <div class="flow-step-item" data-step="3">
+                    <div class="flow-step-body">
+                        <span class="flow-step-num">③</span>
+                        <span class="flow-step-name">标题优化</span>
+                    </div>
+                    <p class="flow-step-desc">提升搜索曝光</p>
+                </div>
+
+                <div class="flow-step-item" data-step="4">
+                    <div class="flow-step-body">
+                        <span class="flow-step-num">④</span>
+                        <span class="flow-step-name">内容生成</span>
+                    </div>
+                    <p class="flow-step-desc">生成营销素材</p>
+                </div>
+
+                <div class="flow-step-item" data-step="5">
+                    <div class="flow-step-body">
+                        <span class="flow-step-num">⑤</span>
+                        <span class="flow-step-name">运营策略</span>
+                    </div>
+                    <p class="flow-step-desc">制定推广方向</p>
+                </div>
+            </div>
+
+            <div class="sidebar-tools">
+                <div class="sidebar-tools-title">AI 运营工具箱</div>
+                <div class="sidebar-tool-item" id="toolSuggest">
+                    <span class="sidebar-tool-icon">✨</span>
+                    <div class="sidebar-tool-info">
+                        <span class="sidebar-tool-name">智能补全</span>
+                        <span class="sidebar-tool-desc">自动填写商品信息</span>
+                    </div>
+                </div>
+                <div class="sidebar-tool-item" id="toolCompetitor">
+                    <span class="sidebar-tool-icon">📊</span>
+                    <div class="sidebar-tool-info">
+                        <span class="sidebar-tool-name">竞品分析</span>
+                        <span class="sidebar-tool-desc">对比竞品找差异点</span>
+                    </div>
+                </div>
+                <div class="sidebar-tool-item" id="toolVisual">
+                    <span class="sidebar-tool-icon">🎨</span>
+                    <div class="sidebar-tool-info">
+                        <span class="sidebar-tool-name">商品视觉策划</span>
+                        <span class="sidebar-tool-desc">生成AI生图Prompt</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ====== 右侧主区 ====== -->
+    <main class="right-col">
+
+        <!-- ======== Hero ======== -->
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    让AI帮每个商品
+                    <span class="hero-title-em">找到最佳表达方式</span>
+                </h1>
+                <p class="hero-sub">
+                    从商品分析到营销内容生成，自动完成完整运营流程。
+                </p>
+            </div>
+            <div class="hero-illustration">
+                <svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="hg1" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#fbcfe8"/>
+                            <stop offset="100%" stop-color="#f472b6"/>
+                        </linearGradient>
+                        <linearGradient id="hg2" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#e9d5ff"/>
+                            <stop offset="100%" stop-color="#a78bfa"/>
+                        </linearGradient>
+                        <linearGradient id="hg3" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#fef3c7"/>
+                            <stop offset="100%" stop-color="#fbbf24"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="110" cy="100" r="90" fill="url(#hg1)" opacity="0.12"/>
+                    <circle cx="130" cy="80" r="60" fill="url(#hg2)" opacity="0.15"/>
+                    <g transform="translate(110,100)">
+                        <rect x="-22" y="-22" width="44" height="44" rx="6" transform="rotate(45)" fill="url(#hg3)" opacity="0.85"/>
+                        <path d="M-5,-5 L0,-12 L5,-5 L12,0 L5,5 L0,12 L-5,5 L-12,0Z" fill="white" opacity="0.9"/>
+                    </g>
+                    <circle cx="55" cy="70" r="5" fill="#f472b6" opacity="0.35"/>
+                    <circle cx="155" cy="135" r="6" fill="#a78bfa" opacity="0.3"/>
+                    <circle cx="70" cy="155" r="3" fill="#fbbf24" opacity="0.5"/>
+                    <circle cx="160" cy="55" r="4" fill="#f472b6" opacity="0.25"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ======== 商品上新分析报告 ======== -->
+        <section class="onboarding-results" id="onboardingResults" style="display:none;">
+            <div class="section-header">
+                <h2 class="section-title">商品上新运营报告</h2>
+                <span class="section-badge" id="onboardingCount"></span>
+            </div>
+            <div id="onboardingContent"></div>
+        </section>
+
+        <!-- ======== 商品输入区 ======== -->
+        <section class="create-card">
+            <div class="create-header">
+                <h2 class="create-title">创建商品运营方案</h2>
+                <p class="create-desc">输入商品信息，AI 自动完成全流程分析</p>
+            </div>
+
+            <form id="productForm" class="create-form">
+                <div class="input-group input-with-btn">
+                    <input type="text" id="productName" placeholder="你的商品叫什么名字？" required>
+                    <button type="button" class="btn-suggest" id="suggestBtn" title="AI 自动补全其他字段">✨ AI 帮我填</button>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <input type="text" id="productPrice" placeholder="价格，如 299">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="targetUsers" placeholder="目标用户是谁？">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <textarea id="productFeatures" rows="2" placeholder="商品有哪些特点和卖点？"></textarea>
+                </div>
+            </form>
+
+            <!-- 竞品分析（可折叠） -->
+            <div class="competitor-toggle" id="competitorToggle">
+                <span class="competitor-toggle-icon">📊</span>
+                <span>竞品分析（可选）</span>
+                <svg class="competitor-toggle-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="competitor-body" id="competitorBody">
+                <div class="input-group">
+                    <textarea id="competitorInput" rows="2" placeholder="描述竞品，如：欧舒丹乳木果护手霜，¥180，主打天然成分和送礼场景，大牌品质、包装精美"></textarea>
+                </div>
+                <button type="button" class="btn-secondary" id="competitorBtn">
+                    <span>开始竞品分析</span>
+                    <span class="spinner" id="competitorSpinner" style="display:none;"></span>
+                </button>
+                <div class="competitor-result" id="competitorResult" style="display:none;"></div>
+            </div>
+
+            <button class="btn-primary start-btn" id="startBtn">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M8 2V14M2 8H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                生成运营方案
+            </button>
+
+        </section>
+
+        <!-- ======== 结果区 ======== -->
+        <section class="result-card" id="resultCard" style="display:none;">
+            <div id="resultContent"></div>
+        </section>
+
+        <!-- ======== 错误提示 ======== -->
+        <div class="error-banner" id="errorCard" style="display:none;">
+            <span class="error-banner-icon">⚠</span>
+            <span id="errorText"></span>
+        </div>
+
+        <!-- ======== AI 视觉策划 ======== -->
+        <section class="card visual-card" id="visualCard">
+            <div class="section-header">
+                <h2 class="section-title">AI 商品视觉策划</h2>
+                <span class="section-badge">视觉</span>
+            </div>
+            <p class="create-desc" style="margin-bottom:16px;">上传商品图片，AI 分析视觉特征并生成 5 个电商场景的生图 Prompt</p>
+
+            <!-- 图片上传区 -->
+            <div class="visual-upload-row">
+                <label class="visual-upload-zone" id="visualUploadZone">
+                    <input type="file" id="visualFileInput" accept=".jpg,.jpeg,.png,.webp" multiple hidden>
+                    <span class="visual-upload-icon">📷</span>
+                    <span>点击上传商品图片</span>
+                    <span style="font-size:10px;color:var(--text-tertiary);">支持 jpg/png/webp，最多 3 张</span>
+                </label>
+                <div class="visual-previews" id="visualPreviews"></div>
+            </div>
+
+            <!-- 商品名 -->
+            <div class="input-group" style="margin-top:12px;">
+                <input type="text" id="visualProductName" placeholder="商品名称（可选，帮助 AI 更准确分析）">
+            </div>
+
+            <button class="btn-primary start-btn" id="visualAnalyzeBtn" disabled>
+                开始视觉分析
+            </button>
+
+            <!-- 分析结果 -->
+            <div class="visual-results" id="visualResults" style="display:none;"></div>
+        </section>
+
+        <!-- ======== 页脚 ======== -->
+        <footer class="footer">
+            <p>AI Product Growth Assistant</p>
+        </footer>
+
+    </main>
+
+    <!-- ====== 右侧历史记录栏 ====== -->
+    <aside class="history-sidebar" id="historySidebar">
+        <div class="history-card">
+            <div class="history-header">
+                <h3 class="history-title">历史记录</h3>
+                <button class="history-clear-btn" id="clearHistoryBtn" title="清空全部">清空</button>
+            </div>
+            <div class="history-list" id="historyList">
+                <p class="history-empty">暂无记录</p>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<!-- ======== 上传弹层 ======== -->
+<div class="modal-overlay" id="uploadModal" style="display:none;">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3>上传商品资料 Excel</h3>
+            <button class="modal-close" id="modalClose">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p class="modal-desc">支持 .xlsx / .xls / .csv 格式，表头需包含「商品名称」列。可选列：价格、分类、商品描述、规格参数、卖点。</p>
+            <label class="upload-zone" id="uploadZone">
+                <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" hidden>
+                <div class="upload-zone-inner">
+                    <span class="upload-zone-icon">📁</span>
+                    <span class="upload-zone-text">点击选择文件 或拖拽到此处</span>
+                    <span class="upload-zone-hint" id="fileHint">未选择文件</span>
+                </div>
+            </label>
+            <div class="upload-actions">
+                <button class="btn-secondary" id="downloadTemplate">下载模板</button>
+                <button class="btn-primary" id="analyzeUploadBtn" disabled>开始分析</button>
+            </div>
+            <div class="upload-status" id="uploadStatus" style="display:none;"></div>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
